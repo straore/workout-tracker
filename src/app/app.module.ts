@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { NgxLoadingModule} from 'ngx-loading';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +27,8 @@ import { FormsModule} from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxLoadingModule.forRoot({})
+    NgxLoadingModule.forRoot({}),
+    NgbModule.forRoot()
   ],
   providers: [WorkoutsApiService],
   bootstrap: [AppComponent]
