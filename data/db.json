@@ -49,6 +49,12 @@
       "date": "2018-9-1",
       "distance": "2000",
       "id": 8
+    },
+    {
+      "type": "run",
+      "date": "2019-3-24",
+      "distance": "125",
+      "id": 9
     }
   ],
   "locations": [

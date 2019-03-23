@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { NgxLoadingModule} from 'ngx-loading';
-import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbDateAdapter} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { WorkoutsApiService } from './services/workouts-api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
+import { DateStringAdapterService } from './services/date-string-adapter.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,10 @@ import { FormsModule} from '@angular/forms';
     NgxLoadingModule.forRoot({}),
     NgbModule.forRoot()
   ],
-  providers: [WorkoutsApiService],
+  providers: [
+    WorkoutsApiService,
+  {provide:NgbDateAdapter, useClass: DateStringAdapterService}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
